@@ -1,11 +1,12 @@
 import { LayoutGrid, Receipt, Wallet, BarChart3, Settings, Target } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
 const menuItems = [
-  { icon: LayoutGrid, label: 'Dashboard', active: true },
-  { icon: Receipt, label: 'Transactions', active: false },
-  { icon: Wallet, label: 'Budgets', active: false },
-  { icon: BarChart3, label: 'Reports', active: false },
-  { icon: Settings, label: 'Settings', active: false },
+  { icon: LayoutGrid, label: 'Dashboard', to: '/' },
+  { icon: Receipt, label: 'Transactions', to: '/transactions' },
+  { icon: Wallet, label: 'Budgets', to: '/budgets' },
+  { icon: BarChart3, label: 'Reports', to: '/reports' },
+  { icon: Settings, label: 'Settings', to: '/settings' },
 ];
 
 export const Sidebar = () => {
@@ -31,17 +32,18 @@ export const Sidebar = () => {
 
         <nav className="space-y-1">
           {menuItems.map((item) => (
-            <button
+            <NavLink
               key={item.label}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                item.active
-                  ? 'bg-emerald-50 text-emerald-700'
-                  : 'text-gray-700 hover:bg-gray-50'
-              }`}
+              to={item.to}
+              className={({ isActive }) =>
+                `w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                  isActive ? 'bg-emerald-50 text-emerald-700' : 'text-gray-700 hover:bg-gray-50'
+                }`
+              }
             >
               <item.icon size={20} />
               <span className="font-medium">{item.label}</span>
-            </button>
+            </NavLink>
           ))}
         </nav>
       </div>
