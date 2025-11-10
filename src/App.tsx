@@ -1,10 +1,9 @@
 import { Sidebar } from './presentation/components/Layout/Sidebar';
 import { Routes, Route } from 'react-router-dom';
 import { DashboardPage } from './presentation/pages/DashboardPage';
-import TransactionsPage from './presentation/pages/TransactionsPage';
-import BudgetsPage from './presentation/pages/BudgetsPage';
-import ReportsPage from './presentation/pages/ReportsPage';
-import SettingsPage from './presentation/pages/SettingsPage';
+import ServiciosPage from './presentation/pages/ServiciosPage';
+import GastosTarjetaPage from './presentation/pages/GastosTarjetaPage';
+import IngresosPage from './presentation/pages/IngresosPage';
 
 function App() {
   return (
@@ -12,10 +11,9 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path="/" element={<DashboardPage />} />
-        <Route path="/transactions" element={<TransactionsPage />} />
-        <Route path="/budgets" element={<BudgetsPage />} />
-        <Route path="/reports" element={<ReportsPage />} />
-        <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/servicios" element={<ServiciosPage />} />
+        <Route path="/gastos-tarjeta" element={<GastosTarjetaPage />} />
+        <Route path="/ingresos" element={<IngresosPage />} />
       </Routes>
     </div>
   );

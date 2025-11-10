@@ -1,12 +1,11 @@
-import { LayoutGrid, Receipt, Wallet, BarChart3, Settings, Target } from 'lucide-react';
+import { LayoutGrid, Box, CreditCard, DollarSign, Target } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const menuItems = [
   { icon: LayoutGrid, label: 'Dashboard', to: '/' },
-  { icon: Receipt, label: 'Transactions', to: '/transactions' },
-  { icon: Wallet, label: 'Budgets', to: '/budgets' },
-  { icon: BarChart3, label: 'Reports', to: '/reports' },
-  { icon: Settings, label: 'Settings', to: '/settings' },
+  { icon: Box, label: 'Servicios', to: '/servicios' },
+  { icon: CreditCard, label: 'Gastos Tarjeta', to: '/gastos-tarjeta' },
+  { icon: DollarSign, label: 'Ingresos', to: '/ingresos' },
 ];
 
 export const Sidebar = () => {
